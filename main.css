@@ -133,6 +133,26 @@ div.pullUp a:hover:before {
   }
 }
 
+footer {
+    background: linear-gradient(79deg, #ff5b7f, #e5ea29, #e66a31, #e4b62a);
+    background-size: 800% 800%;
+
+    -webkit-animation: footer 10s ease infinite;
+    animation: footer 10s ease infinite;
+}
+
+@-webkit-keyframes footer {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes footer {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+
+
 
 .video {
   position: relative;
@@ -158,12 +178,13 @@ div.pullUp a:hover:before {
 .artwork {
   display: flex;
 }
-
-.artwork .artwork-piece {
-  padding: 8% 0 8% 23.5%;
+.artwork-piece{
   background-image:-moz-linear-gradient( 135deg, rgb(160,55,220) 0%, rgb(83,200,234) 100%);
   background-image: -webkit-linear-gradient( 135deg, rgb(160,55,220) 0%, rgb(83,200,234) 100%);
   background-image: -ms-linear-gradient( 135deg, rgb(160,55,220) 0%, rgb(83,200,234) 100%);
+}
+.artwork .artwork-piece {
+  padding: 8% 0 8% 23.5%;
   width: 50%;
 }
 .artwork figure {
@@ -177,12 +198,56 @@ div.pullUp a:hover:before {
   width: 50%;
   padding: 11.25em 10em 11.5em;
 }
-
 footer {
   margin-top: -3em;
-  padding: 8.75em 0 2em;
-  height: 10vw;
-  background-image:-moz-linear-gradient( -45deg, rgb(255,91,127) 0%, rgb(255,213,86) 100%);
-  background-image: -webkit-linear-gradient( -45deg, rgb(255,91,127) 0%, rgb(255,213,86) 100%);
-  background-image: -ms-linear-gradient( -45deg, rgb(255,91,127) 0%, rgb(255,213,86) 100%);
+  padding: 8.75em 0 0;
+  height: 17em;
+}
+.copyright {
+	text-align: center;
+	padding-top: 3em;
+}
+
+
+															/* SOCIAL FOOTER NOT MY CODE WE NEED TO MAKE LOTS OF EDITS */
+.footerContent {
+	width: 64%;
+	margin: 0 auto;
+	padding-bottom: 1.7em;
+}
+.footerSocial {
+	display: block;
+	width: 100%;
+	list-style-type: none;
+	text-align: center;
+}
+.footerSocial li {
+	display: inline-block;
+	margin: 0 1.2em;
+}
+.footerSocial li a {
+	line-height: 3.8em;
+	display: inline-block;
+	width: 4em;
+	height: 4em;
+	text-align: center;
+	border: 2px solid rgba(255,255,255,.3);
+	border-radius: 50%;
+}
+.footerSocial li a:hover {
+	border-color: #fff;
+	background: #fff;
+}
+.footerSocial li a img {
+	width: auto;
+	height: 1em;
+}
+.footerSocial li a .socialHover {
+	display: none;
+}
+.footerSocial li a:hover .socialDefault {
+	display: none;
+}
+.footerSocial li a:hover .socialHover {
+	display: inline;
 }

@@ -6,7 +6,9 @@
 	box-sizing: border-box;
 }
 
-
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	margin: 0;
@@ -19,6 +21,7 @@ header {
 	position: absolute;
 	width: 100%
 }
+
 .title {
 	font-size: 2.8rem;
 }
@@ -37,11 +40,12 @@ header {
 }
 .home {
 	background-image: url(https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png);
-	padding: 29em 0;
+	background-size: cover;
+	background-position: center;
+	padding: 27.5em 0;
 	color: white;
 }
 
-/* CREATE ENTIRE NEW BUTTON CLASS */
 
 			/*
 			sign-up-button {
@@ -60,11 +64,21 @@ header {
 	position: relative;
 	color: white;
 	width: 11em;
-	height: 4em;
-	line-height: 4em;
-	transition: all 0.3s;
+	height: 3.5em;
+	line-height: 3.5em;
 	display: inline-block;
-	
+}
+.btn {
+    opacity: 1;
+    animation: fadeinout 2s linear;
+}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
 }
 
 .btn::before, .btn::after {
@@ -74,52 +88,58 @@ header {
  	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: all 0.3s;
+	transition: all 0.4s;
 }
 
-.btn-six::before {
+.scrolldown::before {
 	opacity: 0;
 	background: rgba(255, 255, 255, 0.1);
 	transform: scale(0.9, 0.9);
 	border-radius: 11px;
 }
 
-.btn-six:hover::before {
+.scrolldown:hover::before {
 	opacity: 1;
 	transform: scale(1, 1);
 }
 
-.btn-six::after {
+.scrolldown::after {
 	transition: all 0.3s;
-	border: 1px solid rgba(255, 255, 255, 0.5);
+	border: 0.1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 11px;
-
 }
 
-.btn-six:hover::after {
+
+.scrolldown:hover::after {
 	transform: scale(0, 0);
 }
 
+.logo {
+	width: 7%;
+	float: left;
+	margin: 1em;
+}
 
 nav ul {
 	magin: 0;
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
+	float: right;
 }
 
 nav li {
 	list-stle: none;
 	text-decoration: none;
 	display: inline-block;
-	margin: 0.8em;
+	margin: 1em;
 }
 
 nav a {
 
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #fff;
+	color: white;
 	font-size: 1em;
 	font-weight: 800;
 	padding: 0.3em;	
@@ -128,6 +148,25 @@ nav a {
 nav a:hover {
 	color: #8C8C8C;
 	transition: ease 0.3s;
+}
+
+/* lol fix this pls */
+
+@media (max-width: 43em) {
+	.logo  {
+		float: center;
+		width: 10%;
+		margin: 0em;
+	}
+	nav ul {
+		float: center;
+	}
+	nav a{
+		font-size: 0.8em;
+	}
+	nav li {
+		margin-left: 0.5em;
+	}
 }
 
 
@@ -141,7 +180,7 @@ nav a:hover {
 /* cool lookin scroll bar */
 
 body::-webkit-scrollbar {
-  width: 0.3em;
+  width: 0.4em;
 }
 
 body::-webkit-scrollbar-track {
@@ -154,27 +193,69 @@ body::-webkit-scrollbar-thumb {
 
 
 
-/* LOADER */
+/* LOADER pls help why when it fades in half the screen is delayed */
 
 #fade {
-    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 0.5s; /* Firefox < 16 */
-            animation: fadein 0.5s;
+	-webkit-animation: fadein 1.2s; 
+	-moz-animation: fadein 1.2s; 
+	animation: fadein 1.2s;
 }
+
+@-webkit-keyframes fadein {
+	from {opacity: 0.2;}
+	to   {opacity: 1;}
+}
+
+@-moz-keyframes fadein {
+	from {opacity: 0.2;}
+ 	to   {opacity: 1;}
+}
+
 
 @keyframes fadein {
-    from { opacity: 0.3; }
-    to   { opacity: 1; }
+	from {opacity: 0.2;}
+	to   {opacity: 1;}
 }
 
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0.3; }
-    to   { opacity: 1; }
+
+
+
+/* SCROLL DOWN */
+
+.scroll-down a:hover {
+	opacity: 0.5;
+	transition: all 0.3s;
 }
 
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0.3; }
-    to   { opacity: 1; }
+.scroll-down a {  /* i killed it */
+	position: relative;
+	top: -4em;
+}
+
+#down a span {
+	position: absolute;
+	display: inline-block;
+	top: -2.5em;
+	left: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	margin-left: -12px;
+	border-left: 2px solid white;
+	border-bottom: 2px solid white;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+
+/* fade in out scroll button */
+
+.scroll-down {
+	animation: fadeoutin 4s linear 2 forwards;
+}
+
+
+@keyframes fadeoutin {
+	0% {opacity: 1;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
 }

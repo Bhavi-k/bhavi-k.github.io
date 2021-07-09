@@ -2,12 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900");
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
 
-body{
-  margin:0;
-  padding:0;
-  background-color:#292929;
-  font-family: 'Montserrat', sans-serif;
-}
+
 #wrapper{
   width:100vw;
   height:100vh;

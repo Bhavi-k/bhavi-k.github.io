@@ -283,7 +283,8 @@ body::-webkit-scrollbar-thumb {
   display:flex;
   align-items:center;
   justify-content:center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Raleway";
+  font-size: 2rem;
 }
 .my-super-cool-btn{
   position:relative;

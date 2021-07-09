@@ -126,11 +126,18 @@
 	      request.setRequestHeader('Content-type', 'application/json');
 
 	      var params = {
-		username: "My Webhook Name",
-		avatar_url: "",
+		username: "bob da pengin",
+		avatar_url": "",
 		content: "someone has clicked da button! :)"
+		"embeds": [
+		    {
+		      "author": {
+			"name": "Birdie♫",
+			"url": "https://www.reddit.com/r/cats/",
+			"icon_url": "https://i.imgur.com/R66g1Pe.jpg"
+		      },      
 	      }
-
+// https://gist.github.com/Birdie0/78ee79402a4301b1faf412ab5f1cdcf9
 	      request.send(JSON.stringify(params));
 	    }
 	  </script>	

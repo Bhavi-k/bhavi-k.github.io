@@ -101,8 +101,28 @@
 			<li>Careers</li>
 			<li>How To</li>
 		</ul>
-	</div>
+	</div>  
 		
+	<div>
+		<button onclick="sendMessage()">Send</button>
+	</div>
+
+	  <script>
+	    function sendMessage() {
+	      var request = new XMLHttpRequest();
+	      request.open("POST", "https://discord.com/api/webhooks/862904961008140318/VUY_ijKnKSiYeosjfhqJgAHFp8-qqWIYaTVH05R2sNEI5hkE84zxHLrJ-cc4b6m8K-cc");
+
+	      request.setRequestHeader('Content-type', 'application/json');
+
+	      var params = {
+		username: "My Webhook Name",
+		avatar_url: "",
+		content: "someone has clicked da button! :)"
+	      }
+
+	      request.send(JSON.stringify(params));
+	    }
+	  </script>	
 	</footer>
 	
 </body>
